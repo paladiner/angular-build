@@ -1,0 +1,188 @@
+[editable] {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0;
+  position: relative;
+  //line-height: 1;
+
+  a {
+    //float: left;
+    //display: inline-block;
+    //margin-left: $gutter;
+    line-height: 14px;
+    font-weight: normal;
+
+    &:first-child {
+      margin-left: $gutter;
+    }
+
+    &[class^="icon-"] {
+      margin-left: $gutter;
+    }
+  }
+
+  .editable-input {
+    flex: 1;
+    display: none;
+
+    input[type='text'] {
+      width: 100%;
+
+      .sidebar & {
+        padding-left: 0;
+      }
+    }
+  }
+  
+  .editable-confirms {
+    display: none;
+    font-size: 1.1rem;
+  }
+
+  .editable-controls {
+    opacity: 0;
+    //white-space: nowrap;
+    @extend %transition-opacity;
+    //display: flex;  //(old)
+    display: none;    //(new)
+
+    // a {
+    //   vertical-align: baseline;
+    // }
+  }
+
+  .edit-controls {
+    display: none;
+  }
+
+  &:hover {
+    .editable-controls {
+      opacity: 1;
+      display: flex;  //(new)
+    }
+  }
+
+  // .editable-text {
+  //   display: block;
+  //   max-width: 100%;
+  //   @include truncateText;
+  // }
+
+  // .control-listing li:hover &,
+  // .section-heading:hover &,
+  &.is-edit {
+    .editable-text,
+    .editable-controls {
+      display: none;
+    }
+
+    .editable-input,
+    .editable-confirms {
+      display: block;
+    }
+
+    .edit-controls {
+      display: flex;
+      width: 100%;
+      align-items: center;
+    }
+  }
+
+
+
+  // Element customization 
+  .section-heading &.is-edit {
+    margin: (-$gutter * 0.5 - 1) 0 (-$gutter * 0.5 - 1) (-$gutter - 1);
+
+    .editable-input {
+      flex: auto;
+    }
+
+    input[type='text'] {
+      padding: ($gutter * 0.5) $gutter;
+    }
+  }
+
+  .large.section-heading &.is-edit {
+    margin: (-$gutter * 0.5 - 2) 0 (-$gutter * 0.5 - 1) (-$gutter - 1);
+  }
+
+  .heading &,
+  .section-heading & {
+    //position: relative;
+
+    .editable-controls {
+      //position: absolute;
+      //top: 5px;
+      //right: -53px; //(old)
+      //left: 100%;     //(new)
+
+
+      background: $bg-body;
+    }
+  }
+
+  .section-heading.large & {
+    .editable-controls {
+      right: (-32px - $gutter);
+      padding-right: $gutter;
+    }
+  }
+}
+
+
+.error-message {
+  font-size: 1.3rem;
+  position: absolute;
+  bottom: 125%;
+  left: 18px;
+  z-index: 90;
+  color: $red;
+  border: 1px solid;
+  background: #fff;
+  padding: ($gutter * 0.75) ($gutter * 1);
+  border-radius: $radius-large;
+  font-weight: 600;
+  max-width: 200px;
+  display: none;
+
+  .is-error & {
+    display: block;
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 16px;
+    @include triangle(10px 16px, $red, up-left);
+    //margin-top: -1px;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 17px;
+    @include triangle(9px 14px, white, up-left);
+    margin-top: -1px;
+  }
+}
+
+
+.section {
+  .is-edit {
+    position: relative;
+  }
+}
+
+.control-link {
+  &.is-edit {
+    font-size: 1.4rem;
+    margin-top: (-$gutter * 1 - 2);
+
+    align-items: center;
+  }
+}

@@ -1,0 +1,56 @@
+$header-ava-size: 34px;
+
+.header-main {
+  height: ($header-height / 2);
+  background: $gray-brand;
+  color: #fff;
+  position: relative;
+
+  .container {
+    height: ($header-height / 2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.header-controls {
+  height: ($header-height / 2);
+  background: $bg-header-bottom;
+  //position: relative;
+
+  .container {
+    height: ($header-height / 2);
+    display: flex;
+    //justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.header-logo {
+  text-align: right;
+  margin-left: 18px;
+}
+
+.header-person {
+  text-align: right;
+
+  .ava {
+    display: inline-block;
+    vertical-align: middle;
+    width: $header-ava-size;
+    height: $header-ava-size;
+    background: url(../images/icons/user-ava.svg) no-repeat 100% 50%;
+  }
+
+  img {
+    border-radius: 50%;
+  }
+
+  .icon-exit {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 20px;
+  }
+}
+

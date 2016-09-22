@@ -1,0 +1,90 @@
+.ngdialog.ngdialog-theme-default.move-to-dialog {
+  .ngdialog-content {
+    width: 600px;
+    padding: 33px 20px;
+  }
+}
+
+// .move-to-wrapper {
+//   width: 600px;
+// }
+.heading {
+  border: 1px solid transparent;
+  border-radius: 3px;
+  white-space: nowrap;
+  overflow: hidden;
+  color: #222;
+  margin-bottom: 12px;
+}
+.section-head {
+  background: #f2f2f2;
+}
+.design-head {
+  background: #f2f2f2;
+}
+.entry-head {
+  background: #fafafa;
+}
+
+.level-1 {
+  padding: 9px 20px;
+  font-size: 18px;
+  font-weight: 500;
+  box-shadow: 0 0 0 1px #ededed;
+}
+
+.level-2 {
+  margin-left: 20px;
+  padding: 5px 10px;
+  font-size: 14px;
+  font-weight: 500;
+  box-shadow: 0 0 0 1px #ededed;
+}
+
+.level-3 {
+  margin-left: 40px;
+  font-size: 13px;
+  background: #fff;
+  padding: 8px 10px 7px;
+  max-width: 282px;
+  @extend %shadow-depth-1;
+}
+
+.level-2 *,
+.level-3 * {
+  display: inline;
+  //font-size: 12px;
+}
+
+.disabled-button {
+  background: gray;
+}
+.entry-head br {
+  display: inline;
+  width: 3px;
+}
+
+.current-head {
+  border: 1px dashed #adadad;
+  box-shadow: none;
+  color: #787878;
+}
+
+
+.selected-head {
+  box-shadow: 0 0 0 2px #0288d1;
+}
+
+
+.move-to-dialog {
+  .button-block {
+    margin: 37px 0 7px;
+    text-align: center;
+
+    .btn {
+      margin: 0 8px;
+      font-size: 16px;
+      padding: 10px 30px 9px;
+    }
+  }
+}

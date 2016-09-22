@@ -1,0 +1,20 @@
+# Mac.
+.DS_STORE
+
+# Node.
+node_modules
+npm-debug.log
+npm-debug.log.*
+ps.log
+
+# Dist folder contents
+dist/*
+_jscsrc.*
+_jshintrc.*
+
+# Tmp backend ignore
+.idea/
+!dist/.htaccess
+_jscsrc.txt
+
+_jshintrc.txt

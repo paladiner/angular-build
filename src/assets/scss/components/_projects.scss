@@ -1,0 +1,79 @@
+.projects {
+  max-width: 690px;
+  margin-top: ($padding-hor / 1.5);
+
+  .section-heading-name {
+    font-weight: 400;
+
+    a {
+      margin: 0;
+    }
+  }
+
+  .section-heading-qnt {
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  .section-heading-qnt {
+    color: #222;
+    font-size: 1.5rem;
+  }
+}
+
+.project {
+  margin-top: ($gutter * 4.5);
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+.project-body {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: ($gutter * 2.5);
+}
+
+.stat-block {
+  width: 190px;
+
+  .r {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: ($gutter * 1.5);
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    background: repeating-linear-gradient(
+      to right,
+      #d4d4d4,
+      #d4d4d4 50%,
+      $bg-body 50%,
+      $bg-body 100%
+    );
+    background-size: 4px 1px;
+    background-repeat: repeat-x;
+    background-position: 0 75%;
+  }
+}
+
+.stat-name,
+.stat-value {
+  background: $bg-body;
+  color: $gray-dark;
+  white-space: nowrap;
+}
+
+.stat-name {
+  //padding-right: $gutter;  // закомментил, чтобы влазило "32 минуты назад.""
+  @include truncateText;
+}
+
+.stat-value {
+  padding-left: $gutter;
+}

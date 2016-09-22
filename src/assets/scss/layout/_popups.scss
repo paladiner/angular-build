@@ -1,0 +1,33 @@
+.popupS-base {
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+.popupS-overlay {
+  background: rgba(black, 0.5);
+}
+
+.popupS-content-holder {
+  max-width: 95% !important;
+}
+
+.popupS-layer {
+  margin: 20px auto;
+  background: #fff;
+  padding: $gutter;
+  //max-width: 90%;
+}
+
+.popupS-resetFocus {
+  display: none;
+}
+
+.popupS-close {
+  float: right;
+  font-size: 24px;
+  margin-top: (-$gutter);
+  color: $blue;
+  cursor: pointer;
+}

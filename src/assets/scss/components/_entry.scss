@@ -1,0 +1,199 @@
+$entry-base-bg: #fff;
+$entry-padding: 1px ($padding-hor / 2) ($gutter * 1.5);
+$entry-radius: $radius-base;
+
+.entry {
+  @extend %shadow-depth-1;
+  background: $entry-base-bg;
+  padding: $entry-padding;
+  border-radius: $entry-radius;
+  //margin-bottom: $gutter;
+  //margin-top: $gutter;
+  
+  //margin-top: ($padding-hor / 2);
+  margin-bottom: ($padding-hor / 2); // фикс чтобы не прыгали при перетаскивании
+
+  position: relative;
+
+  //cursor: all-scroll;
+  cursor: default;
+
+  .sv-sorting-in-progress & {
+    cursor: move;
+  }
+
+  &:first-child {
+    margin-top: $gutter;
+  }
+
+  .break-line {
+    //line-height: 8px;
+    line-height: inherit;
+  }
+
+  &.is-selected {
+    //background: $brand-primary;
+    //color: #fff;
+    box-shadow: 0 0 0 2px $blue;
+
+
+    // .entry-status {
+    //   color: inherit;
+    // }
+  }
+
+  .section & {
+    user-select: none;
+  }
+
+
+  .simply-control-bar {
+    margin: ($gutter * 2) 0 ($gutter * 1);
+
+    .right {
+      a {
+        margin-left: ($gutter * 1.5);
+      }
+    }
+  }
+}
+
+.entry-header {
+  // display: flex;
+  // align-items: center;
+  //justify-content: space-between;
+  width: 100%;
+  margin-top: ($gutter * 1 - 1);
+  position: relative;
+
+  //margin-bottom: ($gutter);
+
+  .right {
+    > div {
+      display: inline-block;
+
+      & + div {
+        &:before {
+          content: '|';
+          margin: 0 4px;
+        }
+      }
+    }
+
+    .entry-controls:before {
+      content: none;
+    }
+  }
+
+  .none-design & .select-proj-tags,
+  .none-design & .select-proj-status {
+    display: inline-block;
+    margin-right: ($gutter * 2.5);
+    //vertical-align: top;
+  }
+
+  .none-design & .select-proj-status {
+    .statuses {
+      margin-top: 0;
+    }
+  }
+}
+
+.entry-status {
+  color: $gray;
+}
+
+.entry-status {
+  //background: #f00;
+  //flex: 1;
+  font-size: 1.2rem;
+
+  &.new {
+    color: $black;
+  }
+}
+
+.entry-controls {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  // flex: 1;
+  text-align: right;
+  color: inherit;
+  //margin-right: -6px;
+  //height: 14px; // чтобы не прыгало при вставке букмарка
+
+  a {
+    display: inline-block;
+    color: inherit;
+    opacity: 0;
+    @extend %transition-opacity;
+
+    svg {
+      fill: $gray-light;
+    }
+  }
+
+  .entry:hover & a,
+  .is-bookmark & .icon-bookmark {
+    opacity: 1;
+  }
+}
+
+.entry-tags {
+  padding: 0 $gutter 0 0;
+  display: flex;
+}
+
+.entry-sep {
+  padding: 0 4px;
+  font-size: 1.2rem;
+}
+
+.entry-tag {
+  flex-direction: row;
+  vertical-align: middle;
+  //display: inline-block;
+  border-radius: 50%;
+  height: 6px;
+  width: 6px;
+  margin: 0 5px 0 0;
+}
+
+.entry-body {
+  display: block;
+
+  word-break: break-all;
+  word-break: break-word;
+  hyphens: auto;
+  //font-size: 1.4rem;
+  max-height: (17px * 3);
+  min-height: 17px;
+  margin-top: $gutter;
+  overflow: hidden;
+
+  .sidebar & {
+    max-height: none;
+  }
+
+  // .is-unread & {
+  //   font-weight: bold;
+  // }
+
+  p {
+    //margin: $gutter 0 0 0;
+    margin: 0;
+    display: block;
+  }
+
+  img {
+    margin-top: 0.5em;
+    max-width: 100%;
+    height: auto;
+  }
+
+  textarea {
+    padding: 8px 0 0;
+  }
+}

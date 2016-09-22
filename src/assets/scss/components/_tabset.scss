@@ -1,0 +1,42 @@
+.tabset {
+  display: flex;
+  font-size: 1.4rem;
+  margin: 0 auto ($gutter * 2);
+  width: 100%;
+  white-space: nowrap;
+  border-bottom: 1px solid $border-color;
+  font-weight: 600;
+
+  li {
+    text-align: center;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    color: #d6d6d6;
+    margin: 0 0 -1px;
+
+    & + li {
+      margin-left: ($gutter * 4);
+    }
+
+    &.is-active {
+      color: $black;
+
+      a {
+        border-bottom: 1px solid;
+      }
+    }
+  }
+
+  a {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    padding: 0 0 ($padding-hor / 3);
+
+    text-overflow: ellipsis;
+    overflow: hidden;
+    color: inherit;
+    transition: color .28s ease;
+  }
+}

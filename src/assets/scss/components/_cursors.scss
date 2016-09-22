@@ -1,0 +1,34 @@
+// cursor for drag on section
+// .section {
+//   //cursor: all-scroll;
+
+//   // .design-icons {
+//   //   cursor: default;
+//   // }
+
+    
+
+// }
+
+.design-item {
+  //cursor: all-scroll;
+
+  cursor: default;
+
+  .sv-sorting-in-progress & {
+    cursor: move;
+  }
+
+  .design-icons {
+    cursor: default;
+  }
+}
+
+
+
+// курсор на передвигаемую зазумленную картинку
+&.is-zoom-move {
+  cursor: move;
+}
+// .is-zoomed {
+// }

@@ -1,0 +1,91 @@
+// list reset
+%listreset {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+// clearfix
+%clearfix {
+ &:after {
+    content: " ";
+    display: block;
+    clear: both;
+  }
+}
+
+.clearfix {
+  @extend %clearfix;
+}
+
+
+// transition
+%transition {
+ transition: all 0.3s ease-in-out;
+}
+
+%transition-opacity {
+  transition: opacity 0.3s ease-in-out;
+}
+
+// justify
+%justify {
+ text-align: justify;
+ > * {
+  display: inline-block;
+  vertical-align: top;
+  text-align: left;
+ }
+ &:after {
+  content: '';
+  width: 100%;
+  display: inline-block;
+  vertical-align: top;
+ }
+}
+
+// SHADOWS
+// shadow for Entry and Sidebar
+%main-shadow {
+  // box-shadow: 0 2px 1px rgba(black, 0.15),
+  //             0 0 1px rgba(black, 0.12);
+  // box-shadow: 0 2px 5px 0 rgba(black, 0.16), 
+  //             0 2px 10px 0 rgba(black, 0.12);
+
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .12), 
+              0 1px 2px rgba(0, 0, 0, .24)
+}
+
+%shadow-depth-1 {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .12), 
+              0 1px 2px rgba(0, 0, 0, .24)
+}
+
+%shadow-depth-2 {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, .16), 
+              0 3px 6px rgba(0, 0, 0, .23);
+}
+
+%shadow-depth-3 {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, .19), 
+              0 6px 6px rgba(0, 0, 0, .23);
+}
+
+%filter-shadow {
+  box-shadow: 0 3px 4px rgba(black, 0.1),
+              0 0 1px rgba(black, 0.13);
+}
+
+
+
+
+/// * Helper class to truncate and add ellipsis to a string too long for it to fit
+/// * on a single line.
+/// * 1. Prevent content from wrapping, forcing it on a single line.
+/// * 2. Add ellipsis at the end of the line.
+
+.ellipsis {
+  white-space: nowrap; /* 1 */
+  text-overflow: ellipsis; /* 2 */
+  overflow: hidden;
+}

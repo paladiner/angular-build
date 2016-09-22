@@ -1,0 +1,235 @@
+$header-height: 100px;
+$container-max-width: 100%;
+
+$left-sidebar-width: 230px + 32px;
+//$sidebar-width: (397px + ($gutter * 2));
+$sidebar-width: 395px;
+
+//$column-max-width: 370px;
+$column-max-width: 300px + ($gutter * 2);
+$sidebar-max-width: $column-max-width;
+$center-column-max-width: $column-max-width;
+
+//$column-min-width: 250px;
+$column-min-width: 300px + ($gutter * 2);
+$sidebar-min-width: $column-min-width;
+$center-column-min-width: $column-min-width;
+
+$sidebar-block-min-height: 300px;
+
+body {
+  overflow-y: scroll;
+  min-width: 1348px;
+}
+
+.is-hidden {
+  display: none;
+}
+
+
+.container {
+  max-width: $container-max-width;
+  min-width: 998px;
+  width: 100%;
+  padding: 0 ($padding-hor / 2) 0 $padding-hor;
+  margin: 0 auto;
+}
+
+.header {
+  position: fixed;
+  z-index: 20;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  width: $left-sidebar-width;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.main-sidebar {
+  position: fixed;
+  z-index: 20;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  background: #f5f5f5;
+  width: $left-sidebar-width;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 10px rgba(black, 0.3);
+}
+
+
+
+
+.middle {
+  height: 100%;
+  //padding-top: ($gutter * 2.5);
+  padding-bottom: ($gutter * 2.5);
+  padding-left: $left-sidebar-width;
+
+  > .container {
+    height: 100%;
+  }
+}
+
+// **** можно менять ширину за счет этого блока
+.columns-row {
+  display: flex;
+  flex-direction: row;
+  
+  //justify-content: space-between;  //(old)
+  //justify-content: space-around;
+  justify-content: flex-start;  //(new)
+
+  //width: 1300px;            // **** можно менять ширину за счет этого блока
+  //margin: 0 (-$gutter);
+  //min-height: 100%;
+  //background: #300;
+}
+
+.column-main-left {
+  padding: 0 $padding-hor ($gutter * 2.5) 0;
+
+  min-width: 666px + ($gutter * 2); //(new)
+  max-width: 1920px - $left-sidebar-width - $sidebar-width - ($gutter * 2); //(new)
+
+  flex: 1; //(old)  // для расстяжки на 100%
+}
+
+.sidebar {
+  width: $sidebar-width;
+  height: 100%;
+  position: relative;
+  padding-top: ($gutter * 2);
+  z-index: 5;
+
+  .sidebar-blocks {
+    width: $sidebar-width;
+  }
+}
+
+
+.section-columns {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+  margin: 0 (-$gutter);
+
+  > .column {
+    width: 50%;
+    //flex: 1;
+    padding: 0 $gutter;
+    will-change: width;
+
+    &.section-right {
+      max-width: $center-column-max-width;
+      min-width: $center-column-min-width;
+    }
+
+    &.section-left {
+     flex: 1;
+    }
+  }
+}
+
+
+// .section,
+// .section-one {
+//   position: relative;
+
+//   &:before {
+//     content: '';
+//     position: absolute;
+//     bottom: 100%;
+//     margin-bottom: 1px;
+//     left: 0;
+//     height: ($gutter * 2.5);
+//     background: $bg-body;
+//     width: 100%;
+//   }
+// }
+
+.section {
+  //margin-top: ($gutter * 2.5);
+
+  &.sv-helper {
+    background: $bg-body;
+  }
+
+  .column {
+    //margin-top: ($gutter * 3);
+    margin-top: ($padding-hor / 1.5);
+    margin-bottom: ($padding-hor / 1.5);
+
+    .design {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.none-entries {
+  margin-top: ($padding-hor / 1.5);
+
+  .column {
+    margin: 0;
+    //margin-bottom: ($padding-hor / 1.5);
+
+    // &.section-left {
+    //   margin-top: ($padding-hor / 1.5);
+    //   margin-bottom: ($padding-hor / 1.5);
+    // }
+  }
+}
+
+.none-designs {
+  .design-list  {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+.section-body {
+  // margin: 0 (-$padding-hor) !important;
+  // padding: 0 ($padding-hor) !important;
+  // width: auto !important;
+  // background: inherit;
+
+  .small + & .section-left {
+    margin-top: ($padding-hor / 1.5);
+    margin-bottom: ($padding-hor / 1.5);
+  }
+
+  .has-entries .section-left {
+    margin-bottom: 0;
+  }
+
+  .has-entries .section-right {
+    //margin-top: ($gutter);
+    .entry:first-child {
+      margin-top: 0;
+    }
+
+    .entry:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.small + .section-body {
+  .has-entries .section-right {
+    //margin-top: ($gutter * 3);
+
+    .entry:first-child {
+      margin-top: 0;
+    }
+  }
+}
+
+
+.convert-placeholder {
+  font-style: normal;
+  color: $gray;
+}

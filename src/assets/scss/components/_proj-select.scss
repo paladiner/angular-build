@@ -1,0 +1,51 @@
+.proj-select {
+  display: block;
+  //margin-top: $gutter;
+  //display: inline-block;
+  
+  margin-left: (-$padding-hor / 6);
+  margin-bottom: $gutter;
+  color: $gray-dark;
+
+  margin-right: 20px;  
+  
+  > .selected,
+  selected {
+    display: inline-block;
+    background: #f5f5f5;
+    border-radius: $radius-small;
+    padding: ($gutter * 0.5) ($padding-hor / 6);
+
+    .main-sidebar-holder & {
+      background: #fff;
+    }
+  }
+
+  // header &:first-child {
+  //   margin-top: (($padding-hor / 3) + 2);
+  // }
+
+  b,
+  .filter {
+    display: inline-block;
+    vertical-align: baseline;
+  }
+
+  .select-proj-cetegory {
+    font-size: 1.4rem;
+  }
+
+  .control-list {
+    > span {
+      margin: 0;
+
+      &:last-child {
+        margin-right: ($gutter / 1);
+      }
+    }
+
+    > div {
+      margin-right: ($gutter / 1);
+    }
+  }
+}

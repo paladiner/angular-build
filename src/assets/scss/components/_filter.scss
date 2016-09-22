@@ -1,0 +1,112 @@
+// filter
+.filter {
+  position: relative;
+  display: inline-block;
+}
+
+.filter-dropdown {
+  position: absolute;
+  top: 100%;
+  //left: (-$gutter * 2.5);
+  left: (-$padding-hor / 3);
+  z-index: 10;
+  padding-top: ($gutter * 1.5);
+  width: 225px;
+
+  &.filter-access {
+    width: 232px;
+  }
+
+  // .selected & {
+  //   left: auto;
+  //   top: 90%;
+  //   right: -36px;
+  // }
+}
+
+.filter-menu {
+  background: #fff;
+  position: relative;
+  z-index: 10;
+  //padding: ($gutter * 0.5) ($gutter * 1.5);
+  padding: ($gutter * 1.5) ($gutter * 2.5);
+
+  cursor: default;
+  
+  @extend %shadow-depth-2;
+
+  .filter-access & {
+    padding: ($gutter * 1.5) ($gutter * 2.5);
+    li {
+      padding: ($gutter * 0.7) ($gutter * 0.5);
+      &:after {
+        content: none;
+      }
+    }
+  }
+
+  li {
+    padding: ($gutter * 0.7) ($gutter * 2.5) ($gutter * 0.7) ($gutter * 0.5);
+    box-sizing: border-box;
+    position: relative;
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 9px;
+      right: 0;
+      width: 13px;
+      height: 12px;
+      background: url(../images/icons/checkbox-unchecked.svg) no-repeat 50%;
+      background-size: 12px 12px;
+      // background-size: cover;
+    }
+
+    &.is-selected {
+      &:after {
+        // content: '';
+        // position: absolute;
+        // top: 11px;
+        // right: 6px;
+        // width: 13px;
+        // height: 12px;
+        background: url(../images/icons/checkbox-checked.svg) no-repeat 50%;
+        background-size: 10px 10px;
+        // background-size: cover;
+      }
+    }
+
+    &.add {
+      padding: ($gutter * 0.7) ($gutter * 0.5);
+      
+      &:after {
+        content: none;
+      }
+      //padding: 0;
+      //padding: ($gutter * 0.7) ($gutter * 0.5);
+    }
+  }
+
+  // li + li {
+  //   border-top: 1px solid #e6e6e6;
+  // }
+
+  .tag {
+    display: block;
+    @include truncateText;
+  }
+  
+  // .control-link {
+  //   display: block;
+  //   padding: ($gutter * 0.7) ($gutter * 0.5);
+  // }
+
+  .text-control {
+    margin-right: (-$gutter * 2);
+  }
+
+  input[type="text"] {
+    width: calc(100% + 10px);
+    margin: (-$gutter * 0.7) (-$gutter * 0.5);
+  }
+}

@@ -1,0 +1,91 @@
+.members {
+  margin-top: 3px; // fix чтобы не прыгало. Но это бред )
+  padding-bottom: ($padding-hor);
+
+  .member {
+    //margin-top: ($gutter * 4);
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    .simply-control-bar {
+      margin-top: ($gutter * 2) !important;
+
+      .left {
+        a {
+          margin-right: $gutter;
+        }
+      }
+    }
+  }
+
+  .stat-value,
+  .stat-name {
+    background: #fff;
+    color: #adadad;
+  }
+
+  // .is-edit {
+  //   margin-top: $gutter;
+  //   height: auto;
+  //   margin-bottom: $gutter;
+  // }
+
+  .select-proj-tags {
+    //margin-top: $gutter;
+    margin-bottom: $gutter;
+  }
+
+  small {
+    font-size: inherit;
+    color: #adadad;
+    margin-left: ($gutter / 2);
+  }
+
+  // при клике в меню, которое редактирует Members
+  &.is-edit {
+    .sidebar-menu {
+      opacity: 0 !important;
+    }
+  }
+
+  .simply-control-bar {
+    margin-top: ($gutter * 4) !important;
+
+    &:first-child {
+      margin-top: ($gutter * 2.25) !important;
+    }
+  }
+}
+
+.member {
+  .control-listing {
+    > li {
+      height: 29px;
+
+      &:nth-child(2) {
+        color: #adadad;
+      }
+    }
+  }
+}
+
+// меню, которое редактирует Members
+// .sidebar-menu {
+//   position: absolute;
+//   top: 60px;
+//   z-index: 10;
+//   right: ($padding-hor / 1.5);
+//   text-align: right;
+//   background: #fff;
+//   opacity: 0;
+
+//   .members:hover & {
+//     opacity: 1;
+//   }
+
+//   li {
+//     padding: ($gutter / 2) 0;
+//   }
+// }

@@ -1,0 +1,110 @@
+input[type='text'],
+input[type='tel'],
+input[type='email'],
+input[type='url'],
+input[type='password'],
+textarea {
+  vertical-align: top;
+  font-size: inherit;
+  padding: ($gutter * 0.75);
+  //padding: ($gutter * 0.75) $gutter;
+  //padding: ($gutter * 0.5) $gutter;
+  border: 1px solid $border-color;
+  border-radius: 0;
+  outline: none;
+  margin: 0;
+
+  // &:focus {
+  //   border-color: $black;
+  // }
+}
+
+input[type='text'],
+input[type='tel'],
+input[type='email'],
+input[type='url'],
+textarea {
+  .is-edit & {
+    background-color: inherit;
+    border-color: transparent transparent $border-color transparent;
+  }
+}
+
+
+.nice-form {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  cursor: pointer;
+  user-select: none;
+
+  .name {
+    flex: 1;
+  }
+
+  [type="radio"],
+  [type="checkbox"] {
+    position:fixed;
+    left:0;
+    top:0;
+    opacity:0;
+    z-index: -1;
+  }
+}
+
+.nice-radiobutton {
+  width: 16px;
+  height: 16px;
+  border: 1px solid #e1e1e1;
+  background: #fff;
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+
+  &:before {
+    content:'';
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    bottom: 3px;
+    left: 3px;
+    background: #757575;
+    border-radius: 50%;
+    opacity: 0;
+  }
+
+  [type="radio"]:checked + & {
+    &:before {
+      opacity: 1;
+    }
+  }
+}
+
+.nice-checkbox {
+  width: 16px;
+  height: 16px;
+  background: url(../images/icons/checkbox-unchecked.svg) no-repeat 50%;
+  position: relative;
+  cursor: pointer;
+  background-size: 12px 12px;
+
+  // &:before {
+  //   content:'';
+  //   position: absolute;
+  //   top: 3px;
+  //   right: 3px;
+  //   bottom: 3px;
+  //   left: 3px;
+  //   background: #757575;
+  //   border-radius: 50%;
+  //   opacity: 0;
+  // }
+
+  [type="checkbox"]:checked + & {
+    background: url(../images/icons/checkbox-checked.svg) no-repeat 50%;
+    background-size: 10px 10px;
+    // &:before {
+    //   opacity: 1;
+    // }
+  }
+}

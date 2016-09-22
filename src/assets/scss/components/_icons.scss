@@ -1,0 +1,147 @@
+[class^="icon-"] {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  position: relative;
+}
+
+.icon-v-dragger {
+  background: url(../images/icons/drag.svg) no-repeat 50% 50%;
+  background-size: 7px auto;
+  cursor: all-scroll;
+}
+
+.icon-bookmark {
+  background: url(../images/icons/bookmark.svg) no-repeat 50% 50%;
+  width: 10px;
+  height: 15px;
+  background-size: cover;
+  //background: url('data:image/svg+xml;utf8,<svg width="8" height="12" viewBox="0 0 8 12" xmlns="http://www.w3.org/2000/svg"><title>Bookmark</title><path d="M8 0v11.692l-4-4-4 4v-11.692h8z" fill="#D6D6D6"/></svg>') no-repeat 50% 50%;
+
+  .is-bookmark & {
+    background-image: url(../images/icons/bookmark-active.svg);
+    //background-image: url('data:image/svg+xml;utf8,%3Csvg+xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22+width%3D%228%22+height%3D%2212%22+viewBox%3D%220+0+8+12%22%3E%3Cpath+fill%3D%22d03402%22+d%3D%22M8+0v11.692l-4-4-4+4v-11.692h8z%22%2F%3E%3C%2Fsvg%3E')
+  }
+}
+
+.icon-remove {
+  background: url(../images/icons/blue_close.svg) no-repeat 50% 50%;
+}
+
+.icon-remove1 {
+  background: url(../images/icons/blue_close.svg) no-repeat 50% 50%;
+  background-size: 11px 11px;
+
+  .s-header & {
+    width: 15px;
+    height: 15px;
+    border: 1px solid $blue;
+    background-position: 50% 50%; 
+    border-radius: 50%;
+    background-size: 8px 8px;
+  }
+}
+
+.icon-trash {
+  background: url(../images/icons/trash.svg) no-repeat 50% 50%;
+  //background: url(../images/icons/blue_delet.svg) no-repeat 50% 50%;
+  //background-size: 100% 100%;
+  //background-size: cover;
+  // width: 14px;
+  // height: 14px;
+}
+
+.icon-cancel {
+  background: url(../images/icons/cancel.svg) no-repeat 50% 50%;
+  background-size: cover;
+}
+
+.icon-approve {
+  background: url(../images/icons/confirm.svg) no-repeat 50% 50%;
+  background-size: 100% 100%;
+}
+
+.icon-edit {
+  background: url(../images/icons/edit.svg) no-repeat 50% 50%;
+  //background-size: cover;
+}
+
+.icon-more {
+  //background: url(../images/icons/more.svg) no-repeat 50% 50%;
+  background: url(../images/icons/gotodetails.svg) no-repeat 50% 50%;
+  // width: 14px;
+  // height: 15px;
+  //background-size: 12px 11px;
+}
+
+// .icon-zoom {
+//   background: url(../images/icons/zoom.svg) no-repeat 50% 50%;
+//   background-size: 14px 14px;
+// }
+
+.icon-reload {
+  background: url(../images/icons/raplace.svg) no-repeat 50% 50%;
+  //background-size: 150% 150%;
+}
+
+.icon-zoom {
+  background: url(../images/icons/details.svg) no-repeat 50% 50%;
+ // background-size: 14px 14px;
+  // height: 15px;
+  // width: 14px;
+  //background-size: cover;
+}
+
+.icon-attach {
+  background: url(../images/icons/attachment.svg) no-repeat 50% 50%;
+  height: 21px;
+  //background-size: 14px 14px;
+}
+
+.icon-exit {
+  background: url(../images/icons/exit.svg) no-repeat 50% 50%;
+  width: 16px;
+  height: 16px;
+  //background-size: 14px 14px;
+}
+
+.icon-section-opener {
+  background: url(../images/icons/opener.svg) no-repeat 50% 50%;
+  transform: rotate(180deg);
+
+  .is-collapsed & {
+    transform: rotate(0);
+  }
+}
+
+.icon-expand {
+  width: 25px;
+  height: 14px;
+  transform: rotate(180deg);
+  background: url(../images/icons/chevron-width.svg) no-repeat 50% 50%;
+
+  .is-expanded & {
+    transform: rotate(0);
+  }
+}
+
+.icon-opener {
+  background: url(../images/icons/expanded.svg) no-repeat 50% 50%;
+  width: 14px;
+  height: 14px;
+  transform: rotate(180deg);
+
+  &.tiny-op-active-opener {
+    transform: rotate(0);
+  }
+
+  .sizer-controls & {
+    background-image: url(../images/icons/expanded-gray.svg)
+  }
+}
+
+.control-icons {
+  a {
+    vertical-align: middle;
+  }
+}

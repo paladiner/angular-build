@@ -1,0 +1,36 @@
+.ngdialog-theme-default.confirm-dialog {
+
+  .ngdialog-content {
+    width: 364px;
+  }
+
+
+  .button-block {
+    margin-top: ($gutter * 3);
+    text-align: center;
+  }
+}
+
+
+// remove close on confirm-dialogs
+.confirm-dialog {
+  .ngdialog-close {
+    display: none;
+  }
+
+  .ngdialog-content {
+    padding: ($gutter * 4) !important;
+  }
+}
+
+
+.ngdialog.ngdialog-theme-default.full-design {
+  padding-top: ($gutter * 2);
+  padding-bottom: ($gutter * 2);
+
+  .ngdialog-content {
+    width: 100%;
+    max-width: 95%;
+    padding: 0;
+  }
+}

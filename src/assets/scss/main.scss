@@ -1,0 +1,146 @@
+$mq-breakpoints: (
+    mobile:  320px,
+    tablet:  740px,
+    desktop: 980px,
+    wide:    1300px,
+    mobileLandscape: 480px
+);
+
+// Show active breakpoint in top right corner of viewport
+//$mq-show-breakpoints: (mobile, mobileLandscape, tablet, desktop, wide);
+
+@import 'base/variables';
+
+@import 'vendors/font-faces';
+@import 'vendors/mq';
+@import 'vendors/normalize';
+@import 'vendors/ngDialog/ngDialog';
+@import 'vendors/ngDialog/ngDialog-theme-default';
+
+
+
+//@import 'vendors/ngDialog/ngDialog-theme-flat';
+
+//@import 'vendors/icomoon';
+//@import 'vendors/fancybox';
+
+@import 'base/functions';
+@import 'base/mixins';
+@import 'base/helpers';
+@import 'base/reset';
+@import 'base/typography';
+
+@import 'layout/common';
+//@import 'layout/header';
+@import 'layout/main-sidebar';
+@import 'layout/sidebar';
+@import 'layout/dashboard';
+// @import 'layout/navigation';
+// @import 'layout/404';
+//@import 'layout/grid';
+//@import 'layout/footer';
+// @import 'layout/mobile-nav';
+@import 'layout/login';
+@import 'layout/modals';
+@import 'layout/popups';
+
+@import 'components/icons';
+
+@import 'components/entry';
+@import 'components/headings';
+@import 'components/heading-bar';
+@import 'components/design';
+@import 'components/controls';
+@import 'components/resizer';
+@import 'components/sortable';
+@import 'components/selected';
+@import 'components/filter';
+
+@import 'components/forms';
+@import 'components/tabset';
+@import 'components/editable';
+@import 'components/badges';
+@import 'components/buttons';
+@import 'components/tooltips';
+
+@import 'components/add-projects';
+@import 'components/proj-select';
+@import 'components/chat';
+@import 'components/attachments';
+@import 'components/writer';
+@import 'components/uploads';
+@import 'components/cursors';
+
+@import 'components/projects';
+@import 'components/statuses';
+@import 'components/members';
+
+@import 'components/slider';
+
+@import 'components/moveto';
+
+
+
+// @import 'components/buttons';
+// @import 'components/badges';
+// @import 'components/tooltips';
+// @import 'components/header-select';
+// @import 'components/create-project';
+// @import 'components/top-bar-controls';
+// @import 'components/search';
+// //@import 'components/timeline';
+// @import 'components/entry-form';
+// @import 'components/share-form';
+// @import 'components/introduce-form';
+// @import 'components/add-entry-block';
+// @import 'components/category-manager';
+// @import 'components/changelog';
+// @import 'components/colorpicker';
+// @import 'components/lightbox';
+// @import 'components/alerts';
+// @import 'components/uploads';
+// @import 'components/chat';
+// @import 'components/modals';
+// @import 'components/headings';
+// @import 'components/spec-link';
+
+// @import 'components/control-panel';
+// @import 'components/selected';
+// @import 'components/arrow-controls';
+// @import 'components/pinner';
+
+// @import 'pages/dashboard';
+// @import 'pages/login';
+// @import 'pages/design-screen';
+// @import 'pages/specification';
+// @import 'pages/profile';
+// @import 'pages/pages-designs';
+
+// body {
+//   background: #0f0;
+// }
+
+
+//@import 'vendors/bootstrap';
+
+
+.none-design {
+  .section-columns {
+    > .column.section-right {
+       max-width: none;
+       width: 100%;
+    }
+  }
+
+  .entry {
+    max-width: 608px;
+  }
+}
+
+.ProseMirror-menubar {
+  padding: 1px 0;
+}
+
+.ProseMirror-menuitem {
+  vertical-align: middle;
+}

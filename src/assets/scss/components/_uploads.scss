@@ -1,0 +1,43 @@
+$upload-progress-height: 6px;
+
+// upload progress
+.upload-progress {
+  background: #f5f5f5 !important;
+  height: $upload-progress-height;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+
+  .progress {
+    position: absolute;
+    z-index: 1;
+    height: $upload-progress-height;
+    background: #b0c795;
+    min-width: 5%;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: -50px;
+      bottom: -50px;
+      width: 50%;
+      border-radius: 50%;
+      background-color: transparent;
+      background-image: linear-gradient(90deg, transparent 20%, rgba(#fff, 0.3) 50%, transparent 80%);
+      animation: uploaderLightMove linear 3s;
+      animation-iteration-count: infinite;
+      z-index: 0;
+    }
+  }
+
+}
+
+
+@keyframes uploaderLightMove {
+  from {
+    left: -100%;
+  }
+  to {
+    left: 100%;
+  }
+}

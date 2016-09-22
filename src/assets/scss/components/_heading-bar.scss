@@ -1,0 +1,297 @@
+.hbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: default;
+
+  .sv-sorting-in-progress & {
+    cursor: move;
+  }
+
+  &.hbar-bg {
+    background: $bg-gray;
+    border: 1px solid #ededed;
+    
+    margin-left: (-$padding-hor - 1);
+    margin-right: (-$padding-hor - 1);
+
+    padding: $gutter 0 $gutter $padding-hor;
+  }
+
+  &.is-edit {
+    .hbar-text,
+    .hbar-qnt,
+    .hbar-opener,
+    .hbar-controls-add,
+    .hbar-controls-main,
+    .wh {
+      display: none;
+    }
+
+    .hbar-controls-confirm {
+      display: block;
+    }
+  }
+
+  &.large {
+    z-index: 10;
+
+    .hbar-controls {
+      display: none;
+    }
+
+    &:hover {
+      .hbar-controls {
+        display: block;
+      }
+    }
+  }
+
+  // &.small {
+  //   //margin-top: ($padding-hor / 1.5);
+  // }
+}
+
+.hbar-components,
+.hbar-main {
+  > div {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.hbar-components {
+  padding-left: ($padding-hor / 1.5);
+}
+
+.is-edit {
+  .hbar-main {
+    flex-grow: 1;
+
+    .hbar-name {
+      width: 100%;
+    }
+
+    .hbar-input {
+      width: 100%;
+    }
+
+    input[type='text'] {
+      width: 100%;
+    }
+  }
+}
+
+.hbar-time {
+  white-space: nowrap;
+  font-size: 1.2rem;
+  color: $gray;
+  padding: 0 0 0 ($gutter * 2.5);
+}
+
+.hbar-name {
+  display: flex;
+  align-items: center;
+  padding: 0 $gutter 0 0;
+  font-size: 1.8rem;
+  font-weight: 500;
+
+  .small & {
+    font-size: 1.5rem;
+    line-height: 1.8rem;
+    font-weight: normal;
+  }
+
+  .is-edit & {
+    line-height: 2.8rem;
+    height: 2.8rem;
+  }
+
+  .is-edit.small & {
+    height: 1.8rem;
+  }
+
+  .large & {
+    font-size: 1.8rem;
+    font-weight: 600;
+    cursor: inherit;
+
+    height: 25px;
+
+    input[type='text'] {
+      margin-top: -1px;
+    }
+  }
+}
+
+
+.hbar-input {
+  display: none;
+
+  input[type='text'] {
+    border: 0;
+    background: none;
+    padding-left: 0;
+  }
+
+  .is-edit & {
+    display: block;
+  }
+}
+
+.hbar-qnt {
+  // height: 100%;
+  // display: flex;
+  // align-items: center;
+}
+
+.hbar-controls {
+  > div {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+
+    padding: 0 ($gutter * 2.5);
+  }
+  
+
+  &.hbar-controls-main {
+    .control-link {
+      margin: 0 $gutter;
+    }
+  }
+
+  &.hbar-controls-confirm {
+    .or {
+      margin: 0 ($gutter / 2) !important;
+    }
+
+    // .large & {
+    //   padding-right: 0 !important;
+    //   a:last-child {
+    //     margin: 0;
+    //   }
+    // }
+  }
+
+  // * {
+  //   vertical-align: middle;
+  // }
+}
+
+.hbar-opener {
+  width: $padding-hor;
+  text-align: center;
+  //order: 5;
+
+  .icon-opener {
+    margin-top: 2px;
+    margin-bottom: -2px;
+  }
+}
+
+.hbar-controls-confirm {
+  display: none;
+  white-space: nowrap;
+
+  .large & {
+    > div {
+      padding-right: 0;
+    }
+  }
+}
+
+
+
+.hbar-sep {
+  width: 1px;
+  height: 28px;
+
+  background: #d8d8d8;
+  
+  .small & {
+    height: 18px;
+  }
+}
+
+.hbar-holder {
+  background: $bg-body;
+
+  margin-left: (-$padding-hor - 1);
+  margin-right: (-$padding-hor - 1);
+
+  padding: ($padding-hor / 1.5) $padding-hor 0;
+
+  &.first {
+    //padding-bottom: ($padding-hor / 1.5);
+    //margin-bottom: (-$padding-hor / 1.5);
+    padding-top: 15px;
+  }
+
+
+  //margin-bottom: ($padding-hor / 1.5);
+  //margin-top: ($padding-hor / 1.5);
+}
+
+.hbar-holder.first + .section .hbar-holder:first-child {
+  //margin-top: (-$padding-hor / 1.5);
+//  padding-top: 0;
+}
+
+
+.first + .section {
+  .hbar-holder:first-child {
+    padding-top: 17px;
+  }
+  .section-body:first-child {
+    padding-top: 3px;
+  }
+}
+.first + .section + .section {
+  padding-top: 3px;
+}
+
+.hbar-holder.first {
+  position: relative;
+}
+
+.hbar-holder.first:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: -17px;
+  left: 0;
+  right: -2px;
+  z-index: -1;
+  
+  background: $bg-body;
+  //height: 20px;
+
+  .hbar {
+    position: relative;
+    z-index: 10;
+  }
+}
+
+
+.hbar-control-menu {
+  margin-right: ($gutter * 2.5);
+  white-space: nowrap;
+  margin-bottom: 2px;  // фикс для выравнивания
+
+  li {
+    display: inline-block;
+
+    & + li {
+      &:before {
+        content: '';
+        height: 10px;
+        width: 1px;
+        margin: 0 4px;
+        display: inline-block;
+        vertical-align: middle;
+        background: $brand-primary;
+      }
+    }
+  }
+}

@@ -1,0 +1,83 @@
+.attachments {
+  margin-top: ($gutter * 1);
+  padding-bottom: ($gutter * 2);
+
+  .h {
+    font-size: 1.4rem;
+    font-weight: 600;
+  }
+
+  .simply-control-bar {
+    margin-top: ($gutter * 2);
+  }
+}
+
+.attachment-list {
+  margin-top: ($gutter * 3);
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+.attachment {
+  margin-top: ($gutter * 2);
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  .meta {
+    // color: #bbb;
+    b {
+      color: $gray-dark;
+    }
+  }
+
+  .chat-message {
+    margin-top: 0;
+    order: 1;
+  }
+
+  .chat-content {
+    margin-top: ($gutter / 2);
+
+    p:first-child {
+      margin: 0;
+    }
+  }
+
+  .attaches {
+    font-size: 1.3rem;
+  }
+}
+
+.attachment-control {
+  order: 2;
+  text-align: right;
+  margin-bottom: -4px;
+  opacity: 0;
+  @extend %transition-opacity;
+
+  .attachment:hover & {
+    opacity: 1;
+  }
+}
+
+.attach-links {
+  // text-overflow: ellipsis;
+  // width: 100px;
+  // overflow: hidden;
+  display: inline-block;
+}
+
+.remove-attach-link {
+  display: inline-block;
+  overflow: hidden;
+  text-indent: -9999px;
+  width: 14px;
+  height: 14px;
+  background: url(../images/icons/red_close.svg) no-repeat 50% 50%;
+  background-size: 8px 8px;
+  vertical-align: middle;
+}

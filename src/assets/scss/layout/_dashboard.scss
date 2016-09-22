@@ -1,0 +1,41 @@
+.dashboard {
+  width: 100%;
+  margin: 0 auto;
+  border-collapse: collapse;
+
+  th,
+  td {
+    text-align: left;
+    padding: $gutter;
+  }
+
+  th {
+    background: #fff;
+    font-weight: 600;
+  }
+
+  td {
+    border-top: 1px solid $gray-light;
+  }
+
+  .date,
+  .image,
+  .pages {
+    text-align: center;
+  }
+
+  .design {
+    width: 270px;
+  }
+}
+
+.dashboard-design {
+  width: 250px;
+  max-height: 160px;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+}

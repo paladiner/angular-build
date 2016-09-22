@@ -1,0 +1,150 @@
+.chat-holder {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom:0;
+  overflow: auto;
+  height: 100%;
+  padding: 0 ($padding-hor / 1.5);
+
+  .only-view & {
+    padding-bottom: $padding-hor;
+  }
+}
+
+
+.chat {
+  //height: 100%;
+  min-height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-content: flex-end;
+  align-items: flex-item;
+  flex-direction: column;
+  flex-wrap: wrap;
+  //background: #f00;
+
+  // .chat-message {
+  //   background: #fff;
+
+  // }
+}
+
+.chat-message {
+  margin-top: ($gutter * 1.5);
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  .meta {
+    font-size: 1.2rem;
+
+    b {
+      color: $gray-dark;
+    }
+  }
+
+  .date {
+    font-size: 1.1rem;
+    color: $gray;
+  }
+}
+
+.chat-content {
+  //margin-top: (-$gutter * 0.5);
+
+  p:first-child {
+    margin-top: 0;
+  }
+}
+
+.attaches {
+  font-size: 1.2rem;
+}
+
+.custom-textarea {
+  //margin: $gutter (-$gutter * 0.5);
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  align-items: stretch;
+  position: relative;
+  margin-bottom: $gutter;
+
+  textarea {
+    flex: 1;
+    min-height: 32px;
+    max-height: 80px;
+    //resize: none;
+    border-radius: $radius-small 0 0 $radius-small;
+  }
+
+  // .icon-attach {
+  //   position: absolute;
+  //   top: 6px;
+  //   right:6px;
+  // }
+
+  .custom-textarea-control {
+    width: 30px;
+    text-align: center;
+    background: #fff;
+    border: 1px solid $border-color;
+    border-left: 0;
+    border-radius: 0 $radius-small $radius-small 0;
+
+    a {
+      margin-top: 5px;
+    }
+  }
+}
+
+
+.need-answer {
+  font-size: 1.2rem;
+  //margin-bottom: $gutter;
+  color: #757575;
+}
+
+.participants {
+  @extend %listreset;
+  display: inline;
+  vertical-align: baseline;
+  margin-left: 4px;
+
+  li {
+    display: inline-block;
+    white-space: nowrap;
+    margin-right: 8px;
+  }
+
+  .nice-form {
+    display: inline;
+
+    // * {
+    //   flex: none;
+    //   position: static;
+    // }
+
+    // input[type='checkbox'] {
+    //   position: static; 
+    // }
+
+    .nice-checkbox {
+      display: inline-block;
+      vertical-align: baseline;
+      width: 12px;
+      height: 12px;
+      position: relative;
+      top: 1px;
+      //margin-left: 2px;
+    }
+  }
+
+  .name {
+    font-weight: 700;
+    vertical-align: baseline;
+  }
+}
