@@ -5,9 +5,8 @@
   "description": "Source code for summary tool project with simple backend dev server",
   "author": "nvorobyev",
   "scripts": {
-    "start": "gulp",
-    "build": "node_modules/.bin/gulp build",
-    "server": "npm install && node_modules/.bin/gulp server:build"
+    "start": "node_modules/.bin/gulp",
+    "build": "node_modules/.bin/gulp build"
   },
   "devDependencies": {
     "autoprefixer-core": "^5.2.1",

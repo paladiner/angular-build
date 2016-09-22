@@ -1,16 +1,12 @@
+---
 # To start development run the following command:
 npm start
-
 # To build production files:
 npm run build
-
 Use `sudo` to host HTTP(s) server at port 443 (required only while in the dev mode)
-
 ---
-
  - `src/` - application source folder
  - `dist/` - folder with compiled files (always rebuilded by the gulp)
-
 ---
 
 ### Структура проекта:
