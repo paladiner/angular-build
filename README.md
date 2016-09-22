@@ -32,11 +32,3 @@ Use `sudo` to host HTTP(s) server at port 443 (required only while in the dev mo
 https://chrome.google.com/webstore/detail/-/gghbihjmlhobaiedlbhcaellinkmlogj
 
 ---
-
-### Hosts configuration:
-
-`/etc/hosts` file configuration example:
-
-```
-
-```
